@@ -1,0 +1,33 @@
+---
+import siteInfo from '~/data/site-info.js';
+import AstroLogo from './AstroLogo.astro';
+import HeaderDropDown from './HeaderDropDown.astro';
+import SocialLinks from './SocialLinks.astro';
+
+const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly);
+---
+
+<nav class="w-full flex items-center justify-between">
+	<a href="/" data-astro-prefetch title="Home" data-home-link>
+		<span class="sr-only">Astro Logo</span>
+		<AstroLogo />
+	</a>
+
+	<div class="hidden shrink flex-row items-center gap-12 lg:flex text-base">
+		<a href="/blog/" data-astro-prefetch class="link">Blog</a>
+		<a href="/projects/" data-astro-prefetch class="link">Projects</a>
+		<a href="/support/" data-astro-prefetch class="link">Support</a>
+	</div>
+
+	<div class="hidden gap-4 lg:flex">
+		<SocialLinks links={socialLinks} />
+	</div>
+</nav>
+
+<script>
+	import { getElement } from '~/helpers/dom.js';
+	getElement('[data-home-link]', HTMLAnchorElement).addEventListener('contextmenu', (event) => {
+		event.preventDefault();
+		window.location.href = '/press#assets';
+	});
+</script>

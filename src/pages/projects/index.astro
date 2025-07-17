@@ -1,0 +1,121 @@
+---
+import MainLayout from '~/layouts/MainLayout.astro';
+import Academy from '../_components/landing-page/academy.astro';
+import ClarityAI from '../_components/landing-page/clarityai.astro';
+import GardenX from '../_components/landing-page/gardenx.astro';
+import { Icon } from 'astro-icon/components';
+
+const pageData = {
+	seo: {
+		title: 'Projects',
+		description: 'Explore Falak’s innovative software projects.',
+		image: { src: '/og/projects.jpg', alt: 'Falak Projects' },
+	},
+	header: {
+		title: 'Our Projects',
+	},
+	footer: {
+		title: 'Want to collaborate?',
+		description:
+			'Interested in partnering or contributing to Falak projects? Reach out to us and join our mission to build impactful software.',
+		cta: 'Contact Us',
+		ctaHref: 'mailto:hello@falakio.tech',
+	},
+	categories: {
+		title: 'Explore Categories',
+		tagline: 'Browse through our diverse range of projects.',
+		cards: [
+			{
+				href: '/category1',
+				title: 'Category 1',
+				description: 'Description for Category 1',
+				cta: 'Learn More',
+				image: '/images/category1.jpg',
+				persist: true,
+			},
+			{
+				href: '/category2',
+				title: 'Category 2',
+				description: 'Description for Category 2',
+				cta: 'Learn More',
+				image: '/images/category2.jpg',
+				persist: false,
+			},
+		],
+	},
+};
+---
+
+<MainLayout {...pageData.seo}>
+	<div class="relative pb-16 overflow-hidden">
+		<div class="relative grid-container py-16 sm:py-20 md:py-24 xl:py-32">
+			<div class="absolute inset-0 bg-grid mask-linear-gradient-to-b bleed-full"></div>
+			<div class="relative flex flex-col items-center gap-6 text-center">
+				<h1
+					class="mx-auto max-w-screen-lg heading-3 sm:heading-2 md:heading-1"
+					set:text={pageData.header.title}
+				/>
+			</div>
+		</div>
+
+		<div class="grid-container py-28 border-astro-gray-500 border-t overflow-hidden">
+			<section class="space-y-14">
+				<div class="flex flex-col items-start">
+					<h2
+						class="bg-red-pink-gradient bg-clip-text font-semibold text-transparent"
+					>
+						Featured Projects
+					</h2>
+					<p
+						class="mt-1 text-white text-balance heading-4 sm:heading-3 md:heading-2"
+						id="projects"
+					>
+						Discover our latest apps and platforms designed to make a difference.
+					</p>
+				</div>
+
+				<div class="gap-6 md:gap-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4 sm:mt-8">
+					<GardenX />
+					<ClarityAI />
+					<Academy />
+				</div>
+			</section>
+		</div>
+
+		<div class="grid-container py-28 border-astro-gray-500 border-t overflow-hidden">
+			<section
+				class="max-w-screen-md mx-auto flex flex-col sm:items-center gap-6 sm:gap-11 sm:text-center"
+			>
+				<div class="flex flex-col gap-2 sm:gap-6 md:gap-8">
+					<h2
+						class="heading-2 sm:text-5xl md:text-6xl sm:leading-tight md:leading-tight"
+						set:text={pageData.footer.title}
+					/>
+					<p
+						class="text-xl sm:text-2xl font-light text-astro-gray-200"
+						set:text={pageData.footer.description}
+					/>
+				</div>
+				<a
+					href={pageData.footer.ctaHref}
+					class="button button-white"
+					set:text={pageData.footer.cta}
+				/>
+			</section>
+
+			<div
+				class="top-[-150px] left-0 z-blur absolute bg-blue-purple-gradient opacity-30 w-[70vw] h-[800px] -translate-x-2/3 pointer-events-none mask-radial-gradient"
+			>
+			</div>
+
+			<div
+				class="top-[-150px] right-0 z-blur absolute bg-blue-green-gradient opacity-30 w-[70vw] h-[800px] translate-x-2/3 pointer-events-none mask-radial-gradient"
+			>
+			</div>
+			<div
+				class="bottom-[-500px] left-1/2 z-blur absolute bg-blue-purple-gradient opacity-50 w-[120vw] lg:w-[70vw] h-[800px] -translate-x-1/2 pointer-events-none mask-radial-gradient"
+			>
+			</div>
+		</div>
+	</div>
+</MainLayout>

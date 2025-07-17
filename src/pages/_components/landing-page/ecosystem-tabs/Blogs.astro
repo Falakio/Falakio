@@ -1,0 +1,72 @@
+---
+import { Icon } from 'astro-icon/components';
+import astroNano from '../../../_assets/themes/astro-nano.png';
+import brutal from '../../../_assets/themes/brutal.png';
+import dante from '../../../_assets/themes/dante.png';
+import microblog from '../../../_assets/themes/microblog.png';
+import openblog from '../../../_assets/themes/openblog.png';
+import stablo from '../../../_assets/themes/stablo.png';
+import ThemeContainer from './ThemeContainer.astro';
+
+const themes = [
+	{
+		href: '/themes/details/astronano/',
+		title: 'Astro Nano',
+		author: 'Mark Horn',
+		src: astroNano,
+		isSeenOnMobile: true,
+	},
+	{
+		href: '/themes/details/stablo-blog-template/',
+		title: 'Stablo',
+		author: 'Web3Templates',
+		src: stablo,
+		isSeenOnMobile: true,
+	},
+	{
+		href: '/themes/details/microblog/',
+		title: 'Microblog',
+		author: 'Lexington Themes',
+		src: microblog,
+		isSeenOnMobile: true,
+	},
+	{
+		href: '/themes/details/dante/',
+		title: 'Dante',
+		author: 'Asta Bankauske',
+		src: dante,
+		isSeenOnMobile: true,
+	},
+	{
+		href: '/themes/details/brutal/',
+		title: 'Brutal',
+		author: 'ElianCodes',
+		src: brutal,
+		isSeenOnMobile: false,
+	},
+	{
+		href: '/themes/details/openblog/',
+		title: 'OpenBlog',
+		author: 'danielcgilibert',
+		src: openblog,
+		isSeenOnMobile: false,
+	},
+];
+---
+
+<div>
+	<div class="p-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 rounded-2xl">
+		{themes.map((theme) => <ThemeContainer theme={theme} />)}
+	</div>
+
+	<a
+		href="/themes/1/?search=&categories%5B%5D=blog"
+		class="mt-4 px-2 sm:px-4 group flex items-center justify-start gap-2 text-astro-gray-200 hover:text-astro-gray-100"
+	>
+		<span
+			class="underline underline-offset-2 decoration-[0.5px] decoration-transparent group-hover:decoration-astro-gray-100"
+			>Browse more blog themes</span
+		>
+		<Icon name="ri:arrow-right-line" size={18} />
+	</a>
+</div>

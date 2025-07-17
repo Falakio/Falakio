@@ -1,0 +1,86 @@
+---
+import MainLayout from '~/layouts/MainLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const pageData = {
+    seo: {
+        title: 'Support',
+        description: 'Get help and support for Falak’s products and services.',
+        image: { src: '/og/support.jpg', alt: 'Falak Support' },
+    },
+    header: {
+        title: 'Support',
+    },
+	footer: {
+		title: 'Need help?',
+		description:
+			'Contact our support team or visit our support forum for assistance with Falak products and services.',
+		cta: 'Email Support',
+		ctaHref: 'mailto:hello@falakio.tech',
+		forum: {
+			label: 'Visit Support Forum',
+			href: 'https://support.falaknet.com'
+		}
+	},
+}
+---
+
+<MainLayout {...pageData.seo}>
+    <div class="relative pb-16 overflow-hidden">
+        <div class="relative grid-container py-16 sm:py-20 md:py-24 xl:py-32">
+            <div class="absolute inset-0 bg-grid mask-linear-gradient-to-b bleed-full"></div>
+            <div class="relative flex flex-col items-center gap-6 text-center">
+                <h1
+                    class="mx-auto max-w-screen-lg heading-3 sm:heading-2 md:heading-1"
+                    set:text={pageData.header.title}
+                />
+            </div>
+        </div>
+
+        <div class="grid-container py-28 border-astro-gray-500 border-t overflow-hidden">
+            <section
+                class="max-w-screen-md mx-auto flex flex-col sm:items-center gap-6 sm:gap-11 sm:text-center"
+            >
+                <div class="flex flex-col gap-2 sm:gap-6 md:gap-8">
+                    <h2
+                        class="heading-2 sm:text-5xl md:text-6xl sm:leading-tight md:leading-tight"
+                        set:text={pageData.footer.title}
+                    />
+                    <p
+                        class="text-xl sm:text-2xl font-light text-astro-gray-200"
+                        set:text={pageData.footer.description}
+                    />
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                        href={pageData.footer.ctaHref}
+                        class="button button-white"
+                        set:text={pageData.footer.cta}
+                    />
+                    <a
+                        href={pageData.footer.forum.href}
+                        class="button button-white"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        {pageData.footer.forum.label}
+                    </a>
+                </div>
+            </section>
+
+            <div
+                class="top-[-150px] left-0 z-blur absolute bg-blue-purple-gradient opacity-30 w-[70vw] h-[800px] -translate-x-2/3 pointer-events-none mask-radial-gradient"
+            >
+            </div>
+
+            <div
+                class="top-[-150px] right-0 z-blur absolute bg-blue-green-gradient opacity-30 w-[70vw] h-[800px] translate-x-2/3 pointer-events-none mask-radial-gradient"
+            >
+            </div>
+            <div
+                class="bottom-[-500px] left-1/2 z-blur absolute bg-blue-purple-gradient opacity-50 w-[120vw] lg:w-[70vw] h-[800px] -translate-x-1/2 pointer-events-none mask-radial-gradient"
+            >
+            </div>
+        </div>
+    </div>
+</MainLayout>

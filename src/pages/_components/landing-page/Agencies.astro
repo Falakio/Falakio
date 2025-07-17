@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Link from '../Link.astro';
+import SectionCopy from '../SectionCopy.astro';
+
+// Import Montserrat Alternates font (Google Fonts CDN)
+const montserratAlternates = "font-family: 'Montserrat Alternates', sans-serif;";
+
+// Fetch agencies data
+const agencies = await getCollection('agencies');
+---
+
+<section class="mt-20 md:mt-24 lg:mt-28 xl:mt-36 relative space-y-12">
+	<div class="w-full max-w-screen-xl mx-auto px-4 sm:px-8">
+		<SectionCopy
+			label="Falak.io Partner Agencies"
+			title="Get professional Falak.io support"
+			description="Find the right team for your project with a Falak.io Partner Agency. From landing pages to e-commerce, get the expert assistance you need."
+		>
+			<Link slot="call-to-action" href="/agencies/" class="secondary">Explore partner agencies</Link>
+		</SectionCopy>
+	</div>
+
+	<div class:list={['w-full max-w-screen-xl mx-auto px-4 sm:px-8', 'relative']}>
+		<ul class="grid fluid-cols-40 sm:fluid-cols-48 gap-2">
+			{
+				agencies.map(({ data, id }) => (
+					<li>
+						<a href={`/agencies/${id}/`} class="rounded-lg flex items-center justify-center bg-white h-[120px]">
+							<span class="sr-only">{data.name}</span>
+							{/* Replace Astro logo images with Falak.io text in Montserrat Alternates */}
+							<span style={montserratAlternates} class="text-3xl font-bold text-[#FF2D55]">Falak.io</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+		{/* Background blur */}
+		<div
+			class:list={[
+				// Positioning
+				'absolute -inset-x-[600px] lg:-right-[300px] -inset-y-72 md:-inset-48 lg:-inset-y-32 -rotate-[7deg]',
+				'z-blur',
+				// Style
+				'bg-red-pink-gradient mask-radial-gradient opacity-30',
+			]}
+		>
+		</div>
+	</div>
+</section>
+		>
+		</div>
+	</div>
+</section>

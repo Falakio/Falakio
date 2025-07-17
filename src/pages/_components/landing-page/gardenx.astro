@@ -1,0 +1,182 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<a
+	id="gardenx"
+	href="/projects/gardenx"
+	class="group flex flex-col justify-between bg-astro-dark-800 border border-astro-dark-100/20 hover:border-astro-dark-100/40 rounded-xl xl:rounded-2xl overflow-hidden"
+>
+	<div class="pt-4 lg:pt-6 min-h-52">
+		<div class="size-full flex items-center justify-between overflow-hidden">
+			<div class="w-1/2 h-full min-h-40 relative flex items-center overflow-hidden">
+				<div
+					id="gardenx-projects-container"
+					class="absolute right-1 motion-reduce:right-4 flex items-center justify-center gap-8"
+				>
+					{
+						Array(6).fill(
+							<div class="relative">
+								
+
+<svg width="69" height="79" viewBox="0 0 69 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M68.7 17.7514C68.7 36.4233 68.596 38.8692 67.5294 43.1295C64.7721 54.359 56.2139 63.6687 45.3405 67.3242C40.6582 68.8758 39.9818 68.9546 29.3165 69.0861L19.4837 69.2176L19.6137 62.1434C19.7437 54.5957 20.0039 52.4917 21.2785 48.5206C22.9694 43.2347 25.7788 38.6325 29.6546 34.6877C34.467 29.8488 40.3721 26.6141 46.9794 25.2466L49.3205 24.7731L46.2509 24.7469C36.5741 24.668 29.0825 27.219 22.2931 32.8995C17.4547 36.9494 13.9429 42.1827 11.8618 48.468C10.3271 53.1229 10.1712 54.8061 10.1712 67.5083V78.8954H0L0.103982 54.4905C0.18202 30.4538 0.208184 30.0855 0.754446 27.5346C3.98004 13.2545 14.4632 2.97183 28.5101 0.394553C29.8627 0.131568 35.1695 0.052679 49.5286 0.0263806L68.7 0V17.7514Z" fill="#16A34A"  />
+</svg>
+
+
+							</div>,
+						)
+					}
+				</div>
+			</div>
+
+			<div
+				class="w-1/2 h-full min-h-40 relative flex items-center bg-astro-dark-800 overflow-hidden"
+			>
+				<div id="gardenx-inlet" class="w-px h-full md:max-lg:h-40"></div>
+				<div id="gardenx-light" class="w-12 h-2/3 md:max-lg:h-40 blur-xl z-30"></div>
+
+				<div
+					id="gardenx-completed-container"
+					class="absolute z-10 -left-[59.5rem] motion-reduce:left-4 flex items-center justify-center gap-8"
+				>
+					{
+						Array(6).fill(
+							<div class="relative pt-0.5">
+								<svg
+									width="66"
+									height="82"
+									viewBox="0 0 66 82"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<rect x="9" y="9" width="48" height="64" rx="12" fill="#b6e388" />
+									<ellipse cx="33" cy="41" rx="16" ry="10" fill="#fff" />
+									<path d="M33 31 Q37 41 33 51 Q29 41 33 31" fill="#b6e388" />
+								</svg>
+								<div class=" absolute -bottom-2 -right-2">
+									<div class="relative landing-section">
+										<Icon name="ri:shopping-basket-2-line" size={22} class="text-green-700" />
+										<Icon
+											name="ri:check-line"
+											size={14}
+											class="absolute m-auto inset-0 text-white"
+										/>
+									</div>
+								</div>
+							</div>,
+						)
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="p-4 xl:p-6 space-y-2">
+		<h3 class="text-base text-white font-semibold">GardenX</h3>
+		<p class="text-astro-gray-200 font-light text-sm xl:text-base md:text-balance">
+			Buy fresh, preservative-free veggies directly from local school gardens. GardenX connects you to healthy produce grown by students—supporting schools and sustainable eating.
+		</p>
+	</div>
+</a>
+
+<style>
+	#gardenx-inlet {
+		background: radial-gradient(
+			3337.59% 50% at 50% 50%,
+			rgba(67, 233, 123, 1) 0%,
+			rgba(182, 227, 136, 0) 100%
+		);
+	}
+	#gardenx-light {
+		background: linear-gradient(
+			42deg,
+			rgba(67, 233, 123, 0.3) 23.59%,
+			rgba(182, 227, 136, 0.3) 76.41%
+		);
+	}
+
+	@media screen and (max-width: 1023px) {
+		#gardenx-projects-container {
+			animation-name: marquee;
+			animation-duration: 50s;
+			animation-play-state: paused;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		#gardenx-completed-container {
+			animation-name: marquee;
+			animation-duration: 50s;
+			animation-play-state: paused;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+	}
+
+	#gardenx-projects-container {
+		animation: marquee 50s linear infinite;
+	}
+
+	#gardenx-completed-container {
+		animation: marquee 50s linear infinite;
+	}
+
+	#gardenx #gardenx-projects-container {
+		animation-play-state: paused;
+	}
+
+	#gardenx #gardenx-completed-container {
+		animation-play-state: paused;
+	}
+
+	#gardenx:hover #gardenx-projects-container {
+		animation-play-state: running;
+		animation: marquee 50s linear infinite;
+	}
+
+	#gardenx:hover #gardenx-completed-container {
+		animation-play-state: running;
+		animation: marquee 50s linear infinite;
+	}
+
+	@keyframes marquee {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(100%);
+		}
+	}
+
+	@media (prefers-reduced-motion) {
+		#gardenx-projects-container {
+			animation-play-state: paused;
+		}
+		#gardenx-completed-container {
+			animation-play-state: paused;
+		}
+	}
+</style>
+
+<script>
+	const container = document.getElementById('gardenx')!;
+	const gardenxProjectsContainer = document.getElementById('gardenx-projects-container')!;
+	const gardenxCompletedContainer = document.getElementById('gardenx-completed-container')!;
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			const intersecting = entries[0].isIntersecting;
+
+			if (intersecting && window.innerWidth < 1023) {
+				gardenxProjectsContainer.style.animationPlayState = 'running';
+				gardenxCompletedContainer.style.animationPlayState = 'running';
+			} else if (!intersecting && window.innerWidth < 1023) {
+				gardenxProjectsContainer.style.animationPlayState = 'paused';
+				gardenxCompletedContainer.style.animationPlayState = 'paused';
+			}
+		},
+		{ root: null, threshold: 0.8 },
+	);
+
+	observer.observe(container);
+</script>
